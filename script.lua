@@ -3,10 +3,13 @@ local gameScripts = {
     ["73956553001240"] = "https://raw.githubusercontent.com/borgeszxz/volleyballLegendsPb/refs/heads/main/volleyball.lua"
 }
 
+local defaultScript = "https://raw.githubusercontent.com/borgeszxz/volleyballLegendsPb/refs/heads/main/volleyball.lua"
+
 local gameId = tostring(game.PlaceId)
 if gameScripts[gameId] then
-    print(gameId)
+    print("Loading:", gameId)
     loadstring(game:HttpGet(gameScripts[gameId]))()
 else
-    print("Script not found")
+    print("Loading:")
+    loadstring(game:HttpGet(defaultScript))()
 end
