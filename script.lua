@@ -1,15 +1,14 @@
 local gameScripts = {
-    ["116495829188952"] = "https://raw.githubusercontent.com/borgeszxz/deadrails/refs/heads/main/dawdawdkasdnjgadsapgasdg.lua",
-    ["73956553001240"] = "https://raw.githubusercontent.com/borgeszxz/volleyballLegendsPb/refs/heads/main/volleyball.lua"
+    ["7018190066"] = "https://raw.githubusercontent.com/borgeszxz/deadrails/refs/heads/main/dawdawdkasdnjgadsapgasdg.lua",
+    ["6931042565"] = "https://raw.githubusercontent.com/borgeszxz/volleyballLegendsPb/refs/heads/main/volleyball.lua"
 }
 
-local defaultScript = "https://raw.githubusercontent.com/borgeszxz/volleyballLegendsPb/refs/heads/main/volleyball.lua"
+local gameId = tostring(game.GameId)
 
-local gameId = tostring(game.PlaceId)
+
 if gameScripts[gameId] then
-    print("Loading:", gameId)
+    print("Loading...", gameId)
     loadstring(game:HttpGet(gameScripts[gameId]))()
 else
-    print("Loading:")
-    loadstring(game:HttpGet(defaultScript))()
+    print("No script found")
 end
